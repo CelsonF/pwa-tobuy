@@ -91,13 +91,42 @@ const displayItems = () => {
 
 	items.forEach((produto) => {
 		let elemItems = document.createElement('li');
-		elemItems.innerHTML = `<strong> ${produto.descricao}</strong>  <br> <p> Quantidade - ${produto.qtd} </p>  <br> <p> Tipo: ${produto.tipoProduto} </p>`;
+		elemItems.innerHTML = `
+		<div class="flex flex-column">
+			<strong>
+				${produto.descricao}
+			</strong>
+			<br />
+			<div>
+					<strong>
+						Quantidade:
+					</strong>
+					${produto.qtd}
+			</div>
+			<br>
+			<div>
+				<strong>
+					Tipo:
+				</strong>
+				${produto.tipoProduto}
+			</div>
+		</div>
+		`;
 		elemItems.setAttribute('data-id', produto.id);
+
+		/*Alterar item*/
 		elemItems.onclick = () => {
 			let campo = document.querySelector("#input-update");
+			let quantidade = document.querySelector("#input-qtdupdate");
+			let tipoSelecionado = document.querySelector("#input-typeupdate");
+
 			activeScreen('screen-3');
 			campo.value = produto.descricao;
+			quantidade.value = produto.qtd;
+			tipoSelecionado.options[tipoSelecionado.selectedIndex = produto.tipoProduto === 'caixa' ? 0 : 1]
+
 			campo.setAttribute('data-id', produto.id);
+
 			campo.focus();
 		};
 		listItems.appendChild(elemItems);
@@ -122,25 +151,37 @@ const activeScreen = (comp) => {
 
 const observerInputAdd = (e) => {
 	let botao = document.querySelector('#btn-register');
-	if (e.target.value.length > 0) botao.disabled = false;
-	else botao.disabled = true;
+	if (e.target.value.length > 0)
+		botao.disabled = false;
+	else
+		botao.disabled = true;
 };
 
 
 const observerInputUpdate = (e) => {
 	let botao = document.querySelector('#btn-update');
-	if (e.target.value.length > 0) botao.disabled = false;
+	if (e.target.value.length > 0)
+		botao.disabled = false;
 	else botao.disabled = true;
 };
 
 
 const updateItem = () => {
 	let campo = document.querySelector("#input-update");
+	let quantidade = document.querySelector("#input-qtdupdate");
+	let tipoSelecionado = document.querySelector("#input-typeupdate");
+
 	let idItem = campo.getAttribute('data-id');
+
 	let i = items.findIndex((produto) => produto.id == idItem);
 	items[i].descricao = campo.value;
+	items[i].qtd = quantidade.value;
+	items[i].tipoProduto = tipoSelecionado.options[tipoSelecionado.selectedIndex].value;
+
 	campo.value = '';
 	campo.removeAttribute('data-id');
+
+
 	activeScreen("screen-1")
 	saveItems();
 	displayItems();
