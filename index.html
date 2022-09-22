@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="assets/css/stylebuy.css">
+	<title>To Buy</title>
+</head>
+<body>
+	<header class="flex flex-row items-center justify-between">
+		<div class="appName">To Buy</div>
+		<div class="badge warning"><span id="estado">0</span></div>
+	</header>
+
+	<div id="screen-1" class="component">
+		<div class="component-header">
+			<h1 class="component-title">Meus Produtos</h1>
+			<button id="btn-add" class="button primary">
+				<img src="assets/svgs/plus.svg" />
+			</button>
+		</div>
+		<div class="page-content">
+			<div id="blank" class="mt4 no-product">
+				<img src="assets/svgs/bag.png" class="opacity-2"/>
+				<p class="text-gray">Nenhum produto listado</p>
+			</div>
+			<ul id="list-items" class="list hidden"></ul>
+		</div>
+	</div>
+
+	<!--Tela de Registrar Produto-->
+	<div id="screen-2" class="component hidden">
+		<div class="component-header">
+			<h1 class="component-title">
+				Novo Produto
+			</h1>
+		</div>
+		<div class="page-content">
+			<div class="flex flex-column">
+				<label for="input-item">Nome do produto:</label>
+				<input id="input-item" class="form-input" type="text" autocomplete="off" />
+
+				<label for="input-qtd" class="mt-1">Quantidade:</label>
+				<input id="input-qtd" class="form-input" type="number" autocomplete="off" />
+
+				<label for="input-type" class="mt-1">Tipo:</label>
+				<select name="tipo-produto" id="input-type">
+					<option value="caixa">Caixa</option>
+					<option value="unidade">Unidade</option>
+				</select>
+
+			</div>
+			<div class="buttonGroup mt-1 end">
+				<button id="cancel-register" class="button half light">Cancelar</button>
+				<button id="btn-register" class="button half primary" disabled>
+					Registrar
+				</button>
+			</div>
+		</div>
+	</div>
+
+	<!--Tela de Alterar e Remover Produto-->
+	<div id="screen-3" class="component hidden">
+		<div class="component-header">
+			<h1 class="component-title">Alteração de produto:</h1>
+		</div>
+		<div class="page-content">
+			<div class="flex flex-column">
+				<label for="input-update">Nome do produto:</label>
+				<input id="input-update" class="form-input" type="text" autocomplete="off" />
+
+				<label for="input-qtdupdate" class="mt-1">Quantidade:</label>
+				<input id="input-qtdupdate" class="form-input" type="number" autocomplete="off" />
+
+				<label for="input-typeupdate" class="mt-1">Tipo:</label>
+				<select name="tipo-produto" id="input-typeupdate">
+					<option value="caixa">Caixa</option>
+					<option value="unidade">Unidade</option>
+				</select>
+
+			</div>
+			<div class="buttonGroup end mt-1">
+				<button id="cancel-update" class="button half light">Cancelar</button>
+				<button id="btn-update" class="button half primary">Alterar</button>
+			</div>
+			<div class="buttonGroup end mt3">
+				<button id="btn-delete" class="button danger">
+					Remover Produto
+				</button>
+			</div>
+		</div>
+	</div>
+
+	<script src="/assets/js/navigation.js"></script>
+	<script src="/assets/js/cruditems.js"></script>
+</body>
+</html>

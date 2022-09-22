@@ -1,0 +1,19 @@
+:root {
+	--primary: #f55a51;
+	--primary-active: #dd6c66;
+	--primary-border: #e0aba8;
+	--secondary: #5e5e5e;
+	--bg-primary: #FAFAFA;
+	--bg-secondary: #FFFFFF;
+	--font-color-primary: #2B2B2B;
+	--font-color-secondary: #dac5c3;
+	--font-primary: 'Arial', sans-serif;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: var(--font-primary);
+	line-height: 1.2rem;
+}
