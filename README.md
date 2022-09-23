@@ -15,7 +15,8 @@ A primeira tela apresentada exibe a listagem dos produtos. Ao realizar a instaç
 Quando houver items para serem listados eles apareceram da seguinte forma:
 
 ![Tela 1](/assets/screens/tela1_list.png)
-Mostrando o nome do produto ou item , quantidade e seu tipo se é uma caixa ou unidade.
+
+Na listagem é mostrado o nome do produto ou item , quantidade e seu tipo se é uma caixa ou unidade.
 
 ### Tela 2
 
