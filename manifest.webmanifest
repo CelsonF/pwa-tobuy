@@ -1,0 +1,32 @@
+{
+	"name": "To Buy - Gestão de produtos",
+	"short_name": "To Buy",
+	"start_url": ".",
+	"display": "standalone",
+	"theme_color": "#f44336",
+	"background_color": "white",
+	"orientation": "portrait",
+	"description": "Aplicação web simples e objetiva para gestão de compras",
+	"icons": [
+		{
+			"src": "./assets/appicon/android-48.png",
+			"sizes": "48x48",
+			"type": "image/png"
+		},
+		{
+			"src": "./assets/appicon/android-72.png",
+			"sizes": "72x72",
+			"type": "image/png"
+		},
+		{
+			"src": "./assets/appicon/android-144.png",
+			"sizes": "144x144",
+			"type": "image/png"
+		},
+		{
+			"src": "./assets/appicon/android-196.png",
+			"sizes": "196x196",
+			"type": "image/png"
+		}
+	]
+}
